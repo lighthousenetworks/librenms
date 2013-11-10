@@ -379,6 +379,7 @@ function cidr2netmask()
   return (long2ip(ip2long("255.255.255.255") << (32-$netmask)));
 }
 
+// This should be replaced with the PHP standard DateInterval http://www.php.net/manual/en/class.dateinterval.php
 function formatUptime($diff, $format="long")
 {
   $yearsDiff = floor($diff/31536000);
@@ -397,9 +398,7 @@ function formatUptime($diff, $format="long")
   {
     if ($yearsDiff > '0') { $uptime .= $yearsDiff . "y "; }
     if ($daysDiff > '0') { $uptime .= $daysDiff . "d "; }
-    if ($hrsDiff > '0') { $uptime .= $hrsDiff . "h "; }
-    if ($minsDiff > '0') { $uptime .= $minsDiff . "m "; }
-    if ($secsDiff > '0') { $uptime .= $secsDiff . "s "; }
+    $uptime .= sprintf("%02d:%02d:%02d", $hrsDiff, $minsDiff, $secsDiff);
   }
   else
   {
