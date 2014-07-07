@@ -573,6 +573,12 @@ $config['os'][$os]['type']              = "wireless";
 $config['os'][$os]['text']              = "Apple AirPort";
 $config['os'][$os]['icon']              = "apple";
 
+$os = "saf";
+$config['os'][$os]['type']		= "wireless";
+$config['os'][$os]['text']              = "SAF Microwave Link";
+$config['os'][$os]['icon']              = "saf";
+
+
 $os = "windows";
 $config['os'][$os]['text']              = "Microsoft Windows";
 $config['os'][$os]['ifname']            = 1;
